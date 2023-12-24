@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <link rel="stylesheet" href="./intro.css">
+    <title>Portfolio</title>
+</head>
+
+<body>
+
+    <header class="container">
+        <div class="page-header">
+            <div class="logo">
+                <a href="#">NBA</a>
+            </div>
+            <input type="checkbox" id="click">
+
+            <label for="click" class="mainicon">
+                <div class="menu">
+                    <i class='bx bx-menu'></i>
+                </div>
+            </label>
+            <ul>
+                <li><a href="/" class="activeHome" style="--navAni:1" >Home</a></li>
+                <li><a href="/about" style="--navAni:2" >About</a></li>
+                <li><a href="/skills" style="--navAni:3" >Skills</a></li>
+                <li><a href="/projects" style="--navAni:4">Portfolio</a></li>
+                <li><a href="contact" style="--navAni:5" >Contact</a></li>
+            </ul>
+            <label class="mode">
+                <input type="checkbox" id="darkModeToggle">
+                <i class='bx bxs-moon'></i>
+            </label>
+        </div>
+    </header>
+
+
+    <section class="container">
+        <!-- Home Page -->
+        <div class='main'>
+            <div class='detail'>
+
+                <h3>Hi, It's Me</h3>
+                <h1>I'm <span style='color:#92018b;'>Nawfal BENAMOR</span></h1>
+                <p>I'm a Full Stack Web Developer And a High Technician in Automation & Industrial IT.  
+                    My Main Goal to help & Satisficed the Local & Global Clients by web development solutions
+                </p>
+                <div class='social'>
+                    <a href='https://www.linkedin.com/in/nawfalbenamor/' style='--socialAni:1'><i
+                            class='bx bxl-linkedin'></i></a>
+                    <a href='#' style='--socialAni:2'><i class='bx bxl-instagram'></i></a>
+                    <a href='https://github.com/BENAMORNAWFAL' style='--socialAni:3'><i class='bx bxl-github'></i></a>
+                    <a href='#' style='--socialAni:4'><i class='bx bxl-facebook-circle'></i></a>
+                </div>
+
+            </div>
+            <div class='img-sec'>
+                <div class='images'>
+                    <img src='./IMG.png' alt='' class='img-w'>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <div id="particles-js"></div>
+    <!-- Script Dark Mode -->
+    <script>
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        const body = document.body;
+        const isDarkMode = localStorage.getItem('darkMode') === 'enabled';
+        if (isDarkMode) {
+            body.classList.add('dark-mode');
+            darkModeToggle.checked = true;
+        }
+        darkModeToggle.addEventListener('change', () => {
+            if (darkModeToggle.checked) {
+                body.classList.add('dark-mode');
+                localStorage.setItem('darkMode', 'enabled');
+            } else {
+                body.classList.remove('dark-mode');
+                localStorage.setItem('darkMode', 'disabled');
+            }
+        });
+
+    </script>
+
+    <!-- Script cursor -->
+    <script>
+        particlesJS("particles-js", {
+            particles: {
+                number: {
+                    value: 100,  // You can adjust the number of particles
+                },
+                color: {
+                    value: "#92018b",  // You can set the color of the particles
+                },
+                shape: {
+                    type: "circle",  // You can change the shape (e.g., "triangle", "edge")
+                },
+                size: {
+                    value: 3,  // You can adjust the size of the particles
+                },
+            },
+            interactivity: {
+                events: {
+                    onhover: {
+                        enable: true,
+                        mode: "repulse",  // You can change the interaction mode
+                    },
+                },
+            },
+        });
+    </script>
+</body>
+
+</html>
